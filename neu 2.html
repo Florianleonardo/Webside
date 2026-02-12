@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Dein Name</title>
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: #151515;
+      --text: #ffffff;
+      --muted: #9a9a9a;
+      --accent: #e10600;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 24px 40px;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 span {
+      color: var(--accent);
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    section {
+      padding: 80px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: var(--muted);
+    }
+
+    /* FILTER */
+    .filters {
+      margin-bottom: 40px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      background: #222;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    button.active {
+      background: var(--accent);
+    }
+
+    /* GALLERY */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      overflow: hidden;
+      border-radius: 18px;
+      background: var(--card);
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: 0.3s;
+    }
+
+    .card:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+
+    /* ABOUT */
+    .about, .contact {
+      text-align: center;
+      color: var(--muted);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 18px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #222;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>DEIN NAME<span>.</span></h1>
+  <nav>
+    <a href="#work">Arbeiten</a>
+    <a href="#about">Über mich</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Comic & Illustration</h2>
+  <p>Minimalistisches Portfolio – Fokus auf meine Zeichnungen.</p>
+</section>
+
+<section id="work">
+  <div class="filters">
+    <button class="active" onclick="filterSelection('all')">Alle</button>
+    <button onclick="filterSelection('comic')">Comic</button>
+    <button onclick="filterSelection('sketch')">Sketch</button>
+    <button onclick="filterSelection('illustration')">Illustration</button>
+  </div>
+
+  <div class="grid">
+
+    <!-- Bilder einfach hier hinzufügen -->
+    <div class="card comic"><img src="bilder/comic1.jpg"></div>
+    <div class="card comic"><img src="bilder/comic2.jpg"></div>
+
+    <div class="card sketch"><img src="bilder/sketch1.jpg"></div>
+
+    <div class="card illustration"><img src="bilder/illu1.jpg"></div>
+
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2>Über mich</h2>
+  <p>
+    Kurzbeschreibung über dich. Stil, Programme, Erfahrung, Veröffentlichungen,
+    was du suchst, Kontaktmöglichkeiten.
+  </p>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Kontakt</h2>
+  <a href="mailto:dein@email.de">Email</a>
+  <a href="#">Instagram</a>
+  <a href="#">ArtStation</a>
+</section>
+
+<footer>
+  © 2026 Dein Name – Portfolio
+</footer>
+
+<script>
+function filterSelection(category) {
+  const cards = document.querySelectorAll('.card');
+  const buttons = document.querySelectorAll('button');
+
+  buttons.forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+
+  cards.forEach(card => {
+    if (category === 'all' || card.classList.contains(category)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
