@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Rote Linien */
+.line-vertical {
+    position: fixed;
+    left: 300px;
+    top: 0;
+    width: 6px;
+    height: 100vh;
+    background: red;
+}
+
+.line-horizontal {
+    position: fixed;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: red;
+}
+
+/* Header */
+header {
+    padding: 40px;
+    padding-left: 350px;
+}
+
+header h1 {
+    font-size: 40px;
+    letter-spacing: 3px;
+}
+
+header p {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 120px;
+    left: 40px;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+nav a:hover {
+    color: red;
+}
+
+/* Galerie */
+.gallery {
+    margin-left: 350px;
+    margin-top: 200px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.box {
+    background: #ddd;
+    height: 300px;
+    overflow: hidden;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>
+</head>
+
+<body>
+
+<div class="line-vertical"></div>
+<div class="line-horizontal"></div>
+
+<nav>
+    <a href="#">ARCHIVE</a>
+    <a href="#">OTHER STUFF</a>
+    <a href="#">CONTACT</a>
+</nav>
+
+<header>
+    <h1>MY NAME</h1>
+    <p>CONTACT ME HERE</p>
+</header>
+
+<section class="gallery">
+    <div class="box">
+        <!-- Bild hier einfügen -->
+        <img src="bilder/bild1.jpg" alt="">
+    </div>
+
+    <div class="box">
+        <img src="bilder/bild2.jpg" alt="">
+    </div>
+
+    <div class="box">
+        <img src="bilder/bild3.jpg" alt="">
+    </div>
+
+    <div class="box">
+        <img src="bilder/bild4.jpg" alt="">
+    </div>
+</section>
+
+</body>
+</html>
